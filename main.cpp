@@ -4,6 +4,11 @@
 
 Window mainWindow;
 
+/**
+ * Draw function
+ * For scalabilty, xChange and yChange are each height / 8
+ * 
+ * */
 void drawBoard(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -17,13 +22,14 @@ void drawBoard(void)
 	{
 		for (int y = 0; y < mainWindow.height; y+= yChange)
 		{
+			// Bit operator if x + y is odd or even to get white or black tiles
  			if (((x + y) / xChange) & 1)
 			{
 				glColor3f(.6, .6, .6);
 			}else{
 				glColor3f(.2, .2, .2);
 			}
-			glRecti(x, y, (x + xChange), (y + yChange));
+			glRecti(x, y, (x + xChange), (y + yChange)); // draw the tile
 		}
 	}
 
@@ -33,25 +39,28 @@ void drawBoard(void)
 int main(int argc, char ** argv)
 {
 	
-
+	// Sanity check if we haven't passed in window size
 	if (argc != 3)
 	{
 		printf("Error Initializing Chessboard\n");
 		printf("The format is width, height\n");
 	}
-
+	// Initialize GL
 	glutInit(&argc, argv);
 	
-
+	// set Window Height and width
 	mainWindow.width = atoi(argv[1]);
 	mainWindow.height = atoi(argv[2]);
 
 	int width = mainWindow.width;
 	int height = mainWindow.height;
 
+	// Reinitialize window with overloaded constructor
 	mainWindow = Window(width, height);
 	mainWindow.Initialize();
 
+	
+	// Call the drawBoard function to draw the chessboard
 	glutDisplayFunc(drawBoard);
 
 
