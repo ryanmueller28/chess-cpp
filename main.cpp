@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <GL/glut.h>
 
 #include "Window.h"
@@ -14,6 +15,7 @@ void drawBoard(void)
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(0.0, 0.0, 0.0);
 	
+	// The difference in x and y for a tile
 	int xChange = mainWindow.getWidth() / 8;
 	int yChange = mainWindow.getHeight() / 8;
 
@@ -66,5 +68,5 @@ int main(int argc, char ** argv)
 
 	glutMainLoop();
 
-	return 0;
+	return EXIT_SUCCESS;
 }

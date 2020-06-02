@@ -4,17 +4,21 @@
 
 #include <GL/glut.h>
 
+/**
+ * Window.h
+ * A class that handles the general window drawing in the chess game
+ * 
+ * */
+
 class Window
 {
 public:
 	Window();
 
+	// Overloaded constructor
 	Window(int windowWidth, int windowHeight);
 
 	void Initialize();	
-
-	int xDiff = width / 64;
-	int yDiff = height / 64;
 
 	int getHeight() { return height; }
 	int getWidth() { return width; }
@@ -25,6 +29,7 @@ public:
 
 private:
 
+	// Held variables for when the game is designed
 	int bufferWidth, bufferHeight;
 
 };
@@ -53,6 +58,8 @@ void Window::Initialize()
 {
 	glutInitWindowSize(width, height);
 	glutInitWindowPosition(100, 150);
+	
+	// Name window
 	glutCreateWindow("Chess");
 	
 	
@@ -69,5 +76,5 @@ void Window::Initialize()
 
 Window::~Window()
 {
-
+	
 }
