@@ -46,6 +46,9 @@ int main(int argc, char ** argv)
 	{
 		printf("Error Initializing Chessboard\n");
 		printf("The format is width, height\n");
+		
+		int temp_argc = 0;
+		glutInit(&temp_argc, NULL);
 		mainWindow = Window();
 		height = mainWindow.height;
 		width = mainWindow.width;
