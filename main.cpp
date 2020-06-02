@@ -40,25 +40,30 @@ void drawBoard(void)
 
 int main(int argc, char ** argv)
 {
-	
+	int width, height;
 	// Sanity check if we haven't passed in window size
 	if (argc != 3)
 	{
 		printf("Error Initializing Chessboard\n");
 		printf("The format is width, height\n");
-	}
-	// Initialize GL
-	glutInit(&argc, argv);
+		mainWindow = Window();
+		height = mainWindow.height;
+		width = mainWindow.width;
+	}else{
+		// Initialize GL
+		glutInit(&argc, argv);
 	
-	// set Window Height and width
-	mainWindow.width = atoi(argv[1]);
-	mainWindow.height = atoi(argv[2]);
+		// set Window Height and width
+		mainWindow.width = atoi(argv[1]);
+		mainWindow.height = atoi(argv[2]);
 
-	int width = mainWindow.width;
-	int height = mainWindow.height;
+		width = mainWindow.width;
+		height = mainWindow.height;
+			// Reinitialize window with overloaded constructor
+		mainWindow = Window(width, height);
+	}
 
-	// Reinitialize window with overloaded constructor
-	mainWindow = Window(width, height);
+
 	mainWindow.Initialize();
 
 	
