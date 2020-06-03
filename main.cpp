@@ -2,6 +2,7 @@
 #include <GL/glut.h>
 
 #include "Window.h"
+//#include "Menu.h"
 
 Window mainWindow;
 
@@ -15,14 +16,18 @@ void drawBoard(void)
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(0.0, 0.0, 0.0);
 	
+	// Create the window buffer
+	int xBuff = mainWindow.getBufferWidth();
+	int yBuff = mainWindow.getBufferHeight();
+
 	// The difference in x and y for a tile
-	int xChange = mainWindow.getWidth() / 8;
-	int yChange = mainWindow.getHeight() / 8;
+	int xChange = xBuff / 8;
+	int yChange = yBuff / 8;
 
 
-	for (int x = 0; x < mainWindow.width; x += xChange)
+	for (int x = 0; x <= xBuff; x += xChange)
 	{
-		for (int y = 0; y < mainWindow.height; y+= yChange)
+		for (int y = 0; y <= yBuff; y+= yChange)
 		{
 			// Bit operator if x + y is odd or even to get white or black tiles
  			if (((x + y) / xChange) & 1)
@@ -37,6 +42,11 @@ void drawBoard(void)
 
 	glFlush();
 }
+
+/**
+ * Wrapper function to type cast from Board.h to main
+ * because GLUT functions are weird AF 
+ * */
 
 int main(int argc, char ** argv)
 {

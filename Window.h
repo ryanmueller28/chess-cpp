@@ -23,13 +23,16 @@ public:
 	int getHeight() { return height; }
 	int getWidth() { return width; }
 
+	int getBufferWidth();
+	int getBufferHeight();
+
 	int width, height;
 
 	~Window();
 
 private:
 
-	// Held variables for when the game is designed
+	// Buffers are the play area, the generic height and width are is the full window size
 	int bufferWidth, bufferHeight;
 
 };
@@ -72,6 +75,18 @@ void Window::Initialize()
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluOrtho2D(0, width, 0, height);
+}
+
+int Window::getBufferWidth()
+{
+	bufferWidth = width - 75;
+	return bufferWidth;
+}
+
+int Window::getBufferHeight()
+{
+	bufferHeight = height - 75;
+	return bufferHeight;
 }
 
 Window::~Window()

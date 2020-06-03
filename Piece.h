@@ -22,6 +22,8 @@ public:
     virtual bool isValidMove(int x, int y, int* board[8][8]);
 
     virtual void drawPiece(int xPos, int yPos, int* board[8][8]);
+
+    virtual bool isCaptured();
     
 
 protected:
@@ -31,6 +33,7 @@ protected:
     bool killed;
     
     std::string color;
+
 
 };
 
@@ -53,6 +56,10 @@ bool Piece::isValidMove(int x, int y, int* board[8][8])
 
 }
 
+bool Piece::isCaptured()
+{
+
+}
 
 /**
  * draws the piece
