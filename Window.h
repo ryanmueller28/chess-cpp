@@ -44,7 +44,6 @@ Window::Window()
 {
 	width = 800;
 	height = 800;
-
 }
 
 /**
@@ -85,7 +84,7 @@ int Window::getBufferWidth()
 
 int Window::getBufferHeight()
 {
-	bufferHeight = height - 75;
+	bufferHeight = width - 75;
 	return bufferHeight;
 }
 

@@ -22,8 +22,6 @@ public:
         setUpDrawCallback();
     }
 
-
-
     ~Board();
 
 private:
@@ -43,6 +41,7 @@ private:
         currentInstance->drawBoard();
     }
 
+    int boardTiles[8][8];
 };
 
 Board::Board()
@@ -52,7 +51,13 @@ Board::Board()
 
 Board::Board(int rows, int cols, int tiles[8][8])
 {
-
+    for (rows = 0; rows < 8; rows++)
+    {
+        for (cols = 0; cols < 8; cols++)
+        {
+            currentInstance->boardTiles[rows][cols] = tiles[rows][cols];
+        }
+    }
 }
 
 /**

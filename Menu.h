@@ -8,8 +8,17 @@
 class Menu
 {
 public:
+
+    static Menu* currentInstance;
+
     Menu();
     ~Menu();
+
+    void displayMenu();
+
+
+private:
+
 
     void CreateGLUTMenu();
 
@@ -34,7 +43,7 @@ void Menu::CreateGLUTMenu()
     // glutCreateMenu paramenters are: void (*) (int menu)
     // adding (int option) doesn't help
 
-    //menu = glutCreateMenu(processMenuEvents);
+   // menu = glutCreateMenu(processMenuEvents);
 
     glutAddMenuEntry("New Game", 1);
     glutAddMenuEntry("Pause", 2);

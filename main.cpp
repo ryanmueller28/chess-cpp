@@ -8,19 +8,14 @@
 Window mainWindow;
 Board* Board::currentInstance;
 
-
-
-
-
 int main(int argc, char ** argv)
 {
 	int width, height;
+
 	// Sanity check if we haven't passed in window size
+	// And use the default constructor
 	if (argc != 3)
-	{
-		printf("Error Initializing Chessboard\n");
-		printf("The format is width, height\n");
-		
+	{		
 		int temp_argc = 0;
 		glutInit(&temp_argc, NULL);
 		mainWindow = Window();
@@ -36,7 +31,7 @@ int main(int argc, char ** argv)
 
 		width = mainWindow.width;
 		height = mainWindow.height;
-			// Reinitialize window with overloaded constructor
+		// Window with overloaded constructor
 		mainWindow = Window(width, height);
 	}
 

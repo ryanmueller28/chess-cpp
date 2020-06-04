@@ -11,6 +11,8 @@
 class Piece
 {
 public:
+
+
     Piece();
     ~Piece();
     
@@ -21,24 +23,28 @@ public:
 
     virtual bool isValidMove(int x, int y, int* board[8][8]);
 
-    virtual void drawPiece(int xPos, int yPos, int* board[8][8]);
+    virtual void drawPiece();
 
     virtual bool isCaptured();
     
+    int bPosition[8][8];
+
 
 protected:
 
 
     int xPos, yPos;
     bool killed;
+
+    
     
     std::string color;
-
 
 };
 
 Piece::Piece()
 {
+
     killed = false;
 }
 
@@ -61,10 +67,11 @@ bool Piece::isCaptured()
 
 }
 
+
 /**
  * draws the piece
  * */
-void Piece::drawPiece(int xPos, int yPos, int* board[8][8])
+void Piece::drawPiece()
 {
 
 }
