@@ -3,6 +3,7 @@
 
 #include "Window.h"
 #include "Board.h"
+//#include "Piece.h"
 //#include "Menu.h"
 
 Window mainWindow;

@@ -88,9 +88,9 @@ void Board::drawBoard()
 			// Bit operator if x + y is odd or even to get white or black tiles
  			if (((x + y) / xChange) & 1)
 			{
-				glColor3f(.6, .6, .6);
+				glColor3f(1, 1, 1);
 			}else{
-				glColor3f(.2, .2, .2);
+				glColor3f(0, 0, 0);
 			}
 			glRecti(x, y, (x + xChange), (y + yChange)); // draw the tile
 		}
