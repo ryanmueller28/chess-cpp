@@ -1,13 +1,16 @@
 #include <cstdlib>
+#include <vector>
 #include <GL/glut.h>
 
 #include "Window.h"
 #include "Board.h"
 //#include "Piece.h"
 //#include "Menu.h"
+//#include "Pawn.h"
 
 Window mainWindow;
 Board* Board::currentInstance;
+
 
 int main(int argc, char ** argv)
 {

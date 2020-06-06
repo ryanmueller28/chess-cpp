@@ -196,22 +196,22 @@ void Piece::Render()
      
      glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
      glPushAttrib(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-         glEnable(GL_TEXTURE_2D);
+    glEnable(GL_TEXTURE_2D);
          
-         /* create a square on the XY
-            note that OpenGL origin is at the lower left
-            but texture origin is at upper left
-            => it has to be mirrored
-            (gasman knows why i have to mirror X as well) */
-         glBegin(GL_QUADS);
-         glNormal3f(0.0, 0.0, 1.0);
-         glTexCoord2d(1, 1); glVertex3f(0.0, 0.0, 0.0);
-         glTexCoord2d(1, 0); glVertex3f(0.0, 1.0, 0.0);
-         glTexCoord2d(0, 0); glVertex3f(1.0, 1.0, 0.0);
-         glTexCoord2d(0, 1); glVertex3f(1.0, 0.0, 0.0);
-         glEnd();
+    /* create a square on the XY
+    note that OpenGL origin is at the lower left
+    but texture origin is at upper left
+    => it has to be mirrored
+    (gasman knows why i have to mirror X as well) */
+    glBegin(GL_QUADS);
+    glNormal3f(0.0, 0.0, 1.0);
+    glTexCoord2d(1, 1); glVertex3f(0.0, 0.0, 0.0);
+    glTexCoord2d(1, 0); glVertex3f(0.0, 1.0, 0.0);
+    glTexCoord2d(0, 0); glVertex3f(1.0, 1.0, 0.0);
+    glTexCoord2d(0, 1); glVertex3f(1.0, 0.0, 0.0);
+    glEnd();
          
-         glDisable(GL_TEXTURE_2D);
+    glDisable(GL_TEXTURE_2D);
      glPopAttrib();
      
      glFlush();
