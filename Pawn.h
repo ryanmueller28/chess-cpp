@@ -2,6 +2,11 @@
 
 #include "Piece.h"
 
+
+/**
+ * To do:
+ * Figure out drawing from files in 2D
+ * */
 class Pawn : public Piece{
 public:
     Pawn();
